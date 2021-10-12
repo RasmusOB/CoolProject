@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Allerta Stencil', sans-serif;
@@ -7,10 +9,12 @@ h1,h2,h3,h4,h5,h6 {
 body {
   background-color: #444;
   color: #fff;
+  padding: 10px; 
+  font-family: 'Roboto', sans-serif;
 }
+
 header{
   background-color: #333;
-  width: fit-content;
   padding: 5px 10px;
 }
 header h2 {
@@ -20,8 +24,38 @@ section h3 {
   text-transform: lowercase;
 }
 
-#content {
+section {
   background-color: #222;
+  padding: 10px;
+  transition: 1s;
+}
+
+#start {
+  grid-area: start;
+}
+
+#next {
+  grid-area: next;
+}
+
+header {
+  grid-area: header;
+}
+
+section:hover {
+  font-size: 110%;
+}
+#footer {
+  grid-area: footer;
+  background-color: #333;
+  padding: 10px;
+}
+
+#content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+  "header header"
+  "start next"
+  "footer footer";
+  grid-gap: 10px 10px;
 }
